@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="stylo.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Greeting Name & Data</title>
+  </head>
+  <body>
+    <h1 class="page-title">My Web Page</h1>
+
+    <div class="form-container">
+      <form class="form" action="">
+        <fieldset>
+          <label for="name">please enter your name</label>
+          <input type="text" id="nombre" />
+          <button type="button" class="js-greet">Send</button>
+        </fieldset>
+      </form>
+    </div>
+    <div class="reply">
+      <p id="greeting" class="greeting"></p>
+    </div>
+
+    <div class="setting">
+      <button id="btn-setting" class="setting__btn" type="button">
+        Setting
+      </button>
+    </div>
+
+    <div id="verTime" class="time">
+      <fieldset>
+        <span class="close">×</span>
+        <form class="form">
+          <label for="time">Morning Hours:</label>
+          <input name="morningTimeSince" type="number" /> to
+          <input name="morningTimeTo" type="number" />
+          <button class="js-save morning" type="submit">Send</button><br />
+        </form>
+        <form class="form">
+          <label for="time">Afternoon Hours:</label>
+          <input name="afternoonTimeSince" type="number" /> to
+          <input name="afternoonTimeTo" type="number" />
+          <button class="js-save afternoon" type="submit">Send</button><br />
+        </form>
+        <form class="form">
+          <label for="time">Evening Hours:</label>
+          <input name="eveningTimeSince" type="number" /> to
+          <input name="eveningTimeTo" type="number" />
+          <button class="js-save evening" type="submit">Send</button><br />
+        </form>
+      </fieldset>
+    </div>
+
+    <script src="exercise.js"></script>
+  </body>
+</html>
