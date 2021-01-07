@@ -1,13 +1,13 @@
 var morningHour = [0, 12];
 var afternoonHour = [12, 18];
 var eveningHour = [18, 24];
-
+//funcion saludo
 function saludo(morningHour, afternoonHour, eveningHour) {
   var nombre = document.getElementById("nombre");
   var username = nombre.value;
   var hora = new Date().getHours();
   var text = "";
-
+  //condiciones de saludo
   if (hora >= morningHour[0] && hora < morningHour[1]) {
     text = "Good Morning";
   } else if (hora >= afternoonHour[0] && hora < afternoonHour[1]) {
@@ -15,7 +15,7 @@ function saludo(morningHour, afternoonHour, eveningHour) {
   } else if (hora >= eveningHour[0] && hora < eveningHour[1]) {
     text = "Good Evening";
   }
-
+  //mostramos saludo
   document.getElementById("greeting").innerHTML =
     "Hola " + username + " " + text + "!";
 }
@@ -23,31 +23,52 @@ function saludo(morningHour, afternoonHour, eveningHour) {
 document.querySelector(".js-greet").addEventListener("click", function (e) {
   e.preventDefault();
   saludo(morningHour, afternoonHour, eveningHour);
+  console.log(morningHour);
+  console.log(afternoonHour);
+  console.log(eveningHour);
 });
 
-var buttonSave = document.querySelectorAll(".js-save");
+var buttonSave = document.querySelector(".js-save");
 
-function settingHour(type) {
-  var inputSince = document.querySelector(`input[name='${type}TimeSince']`)
-    .value;
-  var inputTo = document.querySelector(`input[name='${type}TimeTo']`).value;
+function settingHour() {
+  var morningSince =
+    document.querySelector(`input[name='morningTimeSince']`).value !== ""
+      ? document.querySelector(`input[name='morningTimeSince']`).value
+      : "00";
+  var morningTo =
+    document.querySelector(`input[name='morningTimeTo']`).value !== ""
+      ? document.querySelector(`input[name='morningTimeTo']`).value
+      : "12";
+  var afternoonSince =
+    document.querySelector(`input[name='afternoonTimeSince']`).value !== ""
+      ? document.querySelector(`input[name='afternoonTimeSince']`).value
+      : "12";
+  var afternoonTo =
+    document.querySelector(`input[name='afternoonTimeTo']`).value !== ""
+      ? document.querySelector(`input[name='afternoonTimeTo']`).value
+      : "18";
+  var eveningSince =
+    document.querySelector(`input[name='eveningTimeSince']`).value !== ""
+      ? document.querySelector(`input[name='eveningTimeSince']`).value
+      : "18";
+  var eveningTo =
+    document.querySelector(`input[name='eveningTimeTo']`).value !== ""
+      ? document.querySelector(`input[name='eveningTimeTo']`).value
+      : "24";
 
-  return [parseInt(inputSince), parseInt(inputTo)];
+  return {
+    morning: [parseInt(morningSince), parseInt(morningTo)],
+    afternoon: [parseInt(afternoonSince), parseInt(afternoonTo)],
+    evening: [parseInt(eveningSince), parseInt(eveningTo)],
+  };
 }
 
-buttonSave.forEach(function (btn) {
-  btn.addEventListener("click", function (e) {
-    e.preventDefault();
-    var dayHour = e.target.classList[1];
-    var data = settingHour(dayHour);
-    if (dayHour === "morning") {
-      morningHour = data;
-    } else if (dayHour === "afternoon") {
-      afternoonHour = data;
-    } else if (dayHour === "evening") {
-      eveninHour = data;
-    }
-  });
+buttonSave.addEventListener("click", function (e) {
+  e.preventDefault();
+  var data = settingHour();
+  morningHour = data.morning;
+  afternoonHour = data.afternoon;
+  eveningHour = data.evening;
 });
 
 //abrir configuracion

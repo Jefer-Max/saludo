@@ -53,6 +53,9 @@ fieldset {
   font-weight: bold;
   cursor: pointer;
 }
+.close:hover {
+  color: rgb(97, 97, 97);
+}
 
 /* }
 
