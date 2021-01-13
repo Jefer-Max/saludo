@@ -2,31 +2,28 @@ var morningHour = [0, 12];
 var afternoonHour = [12, 18];
 var eveningHour = [18, 24];
 
-//funcion saludo
-function saludo(morningHour, afternoonHour, eveningHour) {
-  var nombre = document.getElementById("nombre");
-  var username = nombre.value;
-  var hora = new Date().getHours();
+//function greeting
+function greeting(morningHour, afternoonHour, eveningHour) {
+  var name = document.getElementById("name");
+  var username = name.value;
+  var hour = new Date().getHours();
   var text = "";
-  //condiciones de saludo
-  if (hora >= morningHour[0] && hora < morningHour[1]) {
+  //conditions greeting
+  if (hour >= morningHour[0] && hour < morningHour[1]) {
     text = "Good Morning";
-  } else if (hora >= afternoonHour[0] && hora < afternoonHour[1]) {
+  } else if (hour >= afternoonHour[0] && hour < afternoonHour[1]) {
     text = "Good afternoon";
-  } else if (hora >= eveningHour[0] && hora < eveningHour[1]) {
+  } else if (hour >= eveningHour[0] && hour < eveningHour[1]) {
     text = "Good Evening";
   }
-  //mostramos saludo
+  //show greeting
   document.getElementById("greeting").innerHTML =
-    "Hola " + username + " " + text + "!";
+    "Hello " + username + " " + text + "!";
 }
 
 document.querySelector(".js-greet").addEventListener("click", function (e) {
   e.preventDefault();
-  saludo(morningHour, afternoonHour, eveningHour);
-  //console.log(morningHour);
-  //console.log(afternoonHour);
-  //console.log(eveningHour);
+  greeting(morningHour, afternoonHour, eveningHour);
 });
 
 var buttonSave = document.querySelector(".js-save");
@@ -71,10 +68,10 @@ buttonSave.addEventListener("click", function (e) {
   afternoonHour = data.afternoon;
   eveningHour = data.evening;
 
-  saludo(morningHour, afternoonHour, eveningHour);
+  greeting(morningHour, afternoonHour, eveningHour);
 });
 
-//abrir configuracion
+//open setting
 if (document.getElementById("btn-setting")) {
   var time = document.getElementById("verTime");
   var btn = document.getElementById("btn-setting");
