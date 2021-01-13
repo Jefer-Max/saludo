@@ -1,6 +1,7 @@
 var morningHour = [0, 12];
 var afternoonHour = [12, 18];
 var eveningHour = [18, 24];
+
 //funcion saludo
 function saludo(morningHour, afternoonHour, eveningHour) {
   var nombre = document.getElementById("nombre");
@@ -23,9 +24,9 @@ function saludo(morningHour, afternoonHour, eveningHour) {
 document.querySelector(".js-greet").addEventListener("click", function (e) {
   e.preventDefault();
   saludo(morningHour, afternoonHour, eveningHour);
-  console.log(morningHour);
-  console.log(afternoonHour);
-  console.log(eveningHour);
+  //console.log(morningHour);
+  //console.log(afternoonHour);
+  //console.log(eveningHour);
 });
 
 var buttonSave = document.querySelector(".js-save");
