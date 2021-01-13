@@ -69,6 +69,8 @@ buttonSave.addEventListener("click", function (e) {
   morningHour = data.morning;
   afternoonHour = data.afternoon;
   eveningHour = data.evening;
+
+  saludo(morningHour, afternoonHour, eveningHour);
 });
 
 //abrir configuracion
