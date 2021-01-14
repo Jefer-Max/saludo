@@ -17,13 +17,23 @@ function greeting(morningHour, afternoonHour, eveningHour) {
     text = "Good Evening";
   }
   //show greeting
-  document.getElementById("greeting").innerHTML =
-    "Hello " + username + " " + text + "!";
+  if (name.value) {
+    document.getElementById("greeting").innerHTML =
+      "Hello " + username + " " + text + "!";
+  }
 }
 
-document.querySelector(".js-greet").addEventListener("click", function (e) {
+let btn2 = document.querySelector(".js-greet");
+btn2.addEventListener("click", function (e) {
   e.preventDefault();
   greeting(morningHour, afternoonHour, eveningHour);
+});
+
+document.querySelector("#name").addEventListener("keydown", function (e) {
+  if (e.keyCode === 13) {
+    e.preventDefault();
+    btn2.click();
+  }
 });
 
 var buttonSave = document.querySelector(".js-save");
