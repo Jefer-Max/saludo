@@ -49,7 +49,7 @@ function settingHour() {
   var morningTo =
     document.querySelector(`input[name='morningTimeTo']`).value !== ""
       ? document.querySelector(`input[name='morningTimeTo']`).value
-      : "12";
+      : "11";
   var afternoonSince =
     document.querySelector(`input[name='afternoonTimeSince']`).value !== ""
       ? document.querySelector(`input[name='afternoonTimeSince']`).value
@@ -57,7 +57,7 @@ function settingHour() {
   var afternoonTo =
     document.querySelector(`input[name='afternoonTimeTo']`).value !== ""
       ? document.querySelector(`input[name='afternoonTimeTo']`).value
-      : "18";
+      : "17";
   var eveningSince =
     document.querySelector(`input[name='eveningTimeSince']`).value !== ""
       ? document.querySelector(`input[name='eveningTimeSince']`).value
