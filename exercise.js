@@ -1,5 +1,5 @@
-var morningHour = [0, 12];
-var afternoonHour = [12, 18];
+var morningHour = [0, 11];
+var afternoonHour = [12, 17];
 var eveningHour = [18, 24];
 
 //function greeting
@@ -8,12 +8,15 @@ function greeting(morningHour, afternoonHour, eveningHour) {
   var username = name.value;
   var hour = new Date().getHours();
   var text = "";
+
+  afternoonHour[0] = morningHour[1] + 1;
+  eveningHour[0] = afternoonHour[1] + 1;
   //conditions greeting
-  if (hour >= morningHour[0] && hour < morningHour[1]) {
+  if (hour >= morningHour[0] && hour <= morningHour[1]) {
     text = "Good Morning";
-  } else if (hour >= afternoonHour[0] && hour < afternoonHour[1]) {
+  } else if (hour >= afternoonHour[0] && hour <= afternoonHour[1]) {
     text = "Good afternoon";
-  } else if (hour >= eveningHour[0] && hour < eveningHour[1]) {
+  } else if (hour >= eveningHour[0] && hour <= eveningHour[1]) {
     text = "Good Evening";
   }
   //show greeting

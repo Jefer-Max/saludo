@@ -11,24 +11,25 @@ fieldset {
 
 .page-title {
   text-align: center;
-  padding: 1rem;
+  padding: 2rem;
+  color: #00343d;
 }
 
 .form-container {
   width: 100%;
   justify-content: center;
   text-align: center;
-  padding: 1rem;
+  padding: 2rem;
 }
 
 .greeting {
   font-family: "Comic Neue", cursive;
-  font-size: 10px;
+  font-size: 12px;
   text-align: center;
 }
 
 .setting {
-  margin: 1rem;
+  margin: 2rem;
   text-align: center;
 }
 
@@ -39,7 +40,6 @@ fieldset {
 .time {
   display: none;
   text-align: center;
-  padding: 1rem;
 }
 
 .time.active {
@@ -47,12 +47,37 @@ fieldset {
 }
 
 .close {
-  color: gray;
+  color: #00343d;
   float: right;
   font-size: 28px;
   font-weight: bold;
   cursor: pointer;
 }
 .close:hover {
-  color: rgb(97, 97, 97);
+  color: #00414d;
+}
+
+label,
+input {
+  font-size: 16px;
+}
+
+button {
+  background: #00343d;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+  border-radius: 2px;
+  margin: 0.5rem;
+}
+button:hover {
+  background: #00414d;
+}
+button:focus {
+  color: #f4f4f4;
+}
+button:active {
+  color: #0bd8a2;
 }
